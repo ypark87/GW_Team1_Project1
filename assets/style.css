@@ -1,0 +1,48 @@
+.container {
+    background: whitesmoke;
+}
+h1, body {
+    font-family: 'Forum', cursive;
+}
+h1, h3 {
+    text-shadow: 2px 2px grey;
+}
+h1:first-letter {
+    color: orange;
+}
+.nav li {
+    color: orange;
+    font-size: 25px;
+}
+.navbar-default .navbar-nav > li > a {
+    color: orange;
+}
+.navbar-default .navbar-nav > li {
+    padding: 0 40px;
+
+}
+.containerfluid {
+    display: inline;
+}
+h5 {
+    color: steelblue;
+}
+p,h4 {
+    font-size: 20px;
+    color: steelblue;
+    padding: 0 30px;
+    line-height: 2em;
+}
+.thumbnail img {
+    margin-top: 15px;
+}
+.special h4 {
+    color: orange;
+}
+
+body > .container > .footer p {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 230px;
+}
+
