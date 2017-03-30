@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id='quote-title'> </div>
+<div id='quote-content'> </div>
+<button class="genre" id="Instrumental">instrumental</button>
+<button class="genre" id="New Age">New Age</button>
+<button class="genre" id="Ambient">ambient</button>
+
+<br> <br> <br>
+<object id="songnum" width="300" height="50">
+<param name="movie" value="https://freemusicarchive.org/swf/trackplayer.swf"/>
+<param id="songnum1" name="flashvars"/>
+<param name="allowscriptaccess" value="sameDomain"/>
+<embed id="songnum2" type="application/x-shockwave-flash" src="https://freemusicarchive.org/swf/trackplayer.swf" width="300" height="50"/></object>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script>
+$('.genre').on('click', function(e) {
+  e.preventDefault();
+  console.log(this.id);
+  var genre=this.id;
+  var apikey="0UMP39O86QVYPFFZ";
+  var queryURL = "https:/freemusicarchive.org/api/get/tracks.json?api_key="+apikey+"&limit=21&genre_handle="+genre;
+  console.log (queryURL);
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+      var rand=Math.floor((Math.random() * (20)) + 0);
+      console.log(rand);
+      console.log(JSON.parse(response).dataset[rand]);
+      console.log(JSON.parse(response).dataset[rand].track_id);
+      var trackid=JSON.parse(response).dataset[rand].track_id;
+      $("#songnum1").attr("value","track=https://freemusicarchive.org/services/playlists/embed/track/"+trackid+".xml")
+      $("#songnum2").attr("flashvars","track=https://freemusicarchive.org/services/playlists/embed/track/"+trackid+".xml")
+      $("#songnum2").attr("allowscriptaccess", "sameDomain")
+
+     });
+    $('#songnum').on("click", function() {
+        songnum.play();
+      });
+
+});
+</script>
+</body>
+</html>
