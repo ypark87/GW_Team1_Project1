@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div>
+    <h1>Countdown</h1>
+    <span id="min">00</span>:
+    <span id="sec">00</span>
+    <br/>
+    <br/>
+    <input type="button" value="Start" id="start" />
+    <input type="button" value="Stop"  id="stop" />
+    <input type="button" value="Resume"  id="resume" />
+    <input type="button" value="Record Time" id="record" />
+    <br/>
+    <br/>
+    Number of Minutes (enter 1 through 60) <input type="number" id="minuteinput" required min="1" max="60" size="50"/>
+    <br/>
+    <br/>
+    
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+
+<script>
+var medtime;
+var medtime2;
+var timer;
+var resume;
+var stopclick=0;
+
+$("#start").on('click', settime);
+$("#stop").on('click', stoptime);
+$("#resume").on('click', resumetime);
+$("#record").on('click', savetime);
+
+function settime(){
+      $("#min").html("00");
+      $("#sec").html("00");
+      var amount=parseInt($(minuteinput).val().trim());
+      console.log(amount);
+      console.log(jQuery.type(amount));
+      starttime= amount*60000;
+      medtime= amount*60000;
+      console.log(medtime);
+      var minutes = Math.floor(medtime/60000);
+      console.log(minutes);
+      var seconds = Math.floor(medtime/1000);
+      console.log(seconds);
+      if(minutes>9){
+      $("#min").html(minutes); 
+      }
+      if(minutes<10){
+        $("#min").html("0"+minutes);
+      }
+      timer=setInterval(countdown,1000);
+
+};
+
+       function countdown() {
+        console.log(medtime);
+         medtime=medtime-1000;
+         console.log(medtime);
+         minfinal=Math.floor(medtime/60000);
+         secfinal=(medtime-(minfinal*60000))/1000;
+         console.log(minfinal);
+         console.log(secfinal);
+         if(medtime!==0 && minfinal<10){
+          $("#min").html("0"+minfinal);
+         };
+         if(medtime!==0 && minfinal>10){
+          $("#min").html(minfinal);
+         };
+         if(medtime!==0 && secfinal<10){
+          $("#sec").html("0"+secfinal); 
+         };
+         if(medtime!==0 && secfinal>10){
+          $("#sec").html(secfinal);
+         };
+      }
+
+function stoptime() {
+  clearInterval(timer);
+  clearInterval(resume);
+  stopclick++;
+  console.log(stopclick);
+  $("#minuteinput").val("");
+}
+
+function resumetime() {
+  resume=setInterval(startagain,1000);
+  function startagain() {
+  console.log(medtime);
+    medtime=medtime-1000;
+    console.log(medtime);
+    minfinal=Math.floor(medtime/60000);
+    secfinal=(medtime-(minfinal*60000))/1000;
+    console.log(minfinal);
+    console.log(secfinal);
+    if(medtime!==0 && minfinal<10){
+    $("#min").html("0"+minfinal);
+    };
+    if(medtime!==0 && minfinal>10){
+    $("#min").html(minfinal);
+    };
+    if(medtime!==0 && secfinal<10){
+    $("#sec").html("0"+secfinal); 
+    };
+    if(medtime!==0 && secfinal>10){
+    $("#sec").html(secfinal);
+    };
+}
+}
+
+function savetime() {
+   console.log(starttime-medtime);
+   console.log(starttime-medtime);
+  $("#minuteinput").val("");
+}
+
+
+
+</script>
+</body>
+</html>
