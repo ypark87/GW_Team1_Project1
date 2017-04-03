@@ -46,3 +46,9 @@ body > .container > .footer p {
     margin-top: 230px;
 }
 
+.form-group label {
+    padding-left: 20px;
+}
+div .col-md-4 {
+    margin: 0;
+}
