@@ -52,3 +52,9 @@ body > .container > .footer p {
 div .col-md-4 {
     margin: 0;
 }
+#container {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
