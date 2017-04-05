@@ -1,3 +1,4 @@
+
 var queryURL = "http://quotesondesign.com//wp-json/posts?rand&filter[posts_per_page]=20";
 
 $( document ).ready(function() {
@@ -17,3 +18,4 @@ $('#get-another-quote-button').on('click', function(e) {
        });
      });
    });
+

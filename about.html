@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meditation Bliss App</title>
+
+    <!--Bootstrap-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--css to override the style-->
+    <link rel="stylesheet" type="text/css" href="assets/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
+    <!--Link to JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <!--Link to Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+
+    <!--Link to moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <br>
+    <!--Jumbotron Title-->
+    <div class="jumbotron" style="background: linear-gradient(to right, royalblue, #aed4f8)">
+        <h1 class="text-center" style="font-size: 7em; color: deepskyblue"><strong>Bliss</strong></h1>
+        <h3 class="text-center" style="font-size: 3em; color: deepskyblue">Meditation Retreat</h3>
+    </div>
+
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="page-collection">
+                    <a href="main.html">Home</a>
+                </li>
+                <li class="page-collection">
+                    <a href="about.html">About</a>
+                </li>
+                <li class="page-collection">
+                    <a href="meditate.html">Meditate</a>
+                </li>
+                <li class="page-collection">
+                    <a href="apps.html">Apps</a>
+                </li>
+                <li class="page-collection">
+                    <a href="contact.html">Contact</a>
+                </li>
+                <li class="page-collection">
+                    <a href="login.html">Log in</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Page Headline-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <h4 class="page-title" style="font-size: 2em; color: orange">About</h4>
+        </div>
+    </nav>
+    <!--Middle Section-->
+
+    <div class="row">
+
+        <div class="col-md-4 pull-left">
+                <img class="img-responsive" src="assets/images/bliss4.jpg">
+        </div>
+
+            <div class="special">
+                <p>Through the use of meditation app, we have been able to bring meditation to thousands
+                   of people worldwide. Our Bliss Meditation Retreat app has connected us with people from every walk of
+                   life and age group. Our meditations are recommended by doctors and therapists and are used in schools,
+                   businesses, hospitals, clinics, military settings and homes all over the world.</p>
+                <br>
+                <p>We began practicing, then teaching, meditation in a very specific style. We thought this was the best way to
+                   meditate, but since then we have explored many forms of meditation. We have found there are endless ways to
+                   enter a meditative state and to experience the benefits of meditation. Our meditation course is based on universal
+                    principles that can be discovered in many traditions and practices. They help you to access
+                   a universal human ability -- the ability of the mind to be at ease. Our meditation style is for any culture, philosophy,
+                   beliefs or lifestyle.
+                </p>
+            </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="footer">
+        <p>&copy;&nbsp;Copyright 2017 StaylorRobinJones</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Javascript-->
+<script src="assets/javascript/app.js"></script>
+<!-- Created a background with scrolling images -->
+<!-- link to js file that supports the backstretch piece -->
+<script type="text/javascript" src="assets/javascript/backstretch.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.backstretch('assets/images/bliss2.jpg');
+    });
+</script>
+
+
+</body>
+</html>
+

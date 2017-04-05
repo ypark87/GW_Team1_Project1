@@ -1,3 +1,4 @@
+
 $( document ).ready(function() {
 $('.genre').on('click', function(e) {
   e.preventDefault();
@@ -25,3 +26,4 @@ $('.genre').on('click', function(e) {
        });
 });
 });
+

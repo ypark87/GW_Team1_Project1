@@ -1,3 +1,4 @@
+
 var medtime;
 var medtime2;
 var timer;
@@ -105,3 +106,4 @@ function resumetime() {
 }
 
 });
+
