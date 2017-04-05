@@ -23,6 +23,15 @@
     <!--Link to moment.js -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
+    <!--Link to timer javascript file-->
+    <script src="assets/javascript/JS_Timer.js"></script>
+
+        <!--Link to Music javascript file-->
+    <script src="assets/javascript/JS_Music.js"></script>
+
+        <!--Link to Quotesjavascript file-->
+    <script src="assets/javascript/JS_Quotes.js"></script>
+
 </head>
 
 <body>
@@ -70,6 +79,8 @@
     <!--Middle Section-->
 
     <div class="row">
+      
+        <div class="music"></div>
 
         <!--<div class="col-md-4">
             <div class="rounded">
@@ -77,21 +88,31 @@
                 <div class="caption">
                     <!--<h4>Thumbnail label</h4>-->
                 <!--</div>
+
             </div>
         </div>-->
         <!--Music Choice Buttons-->
         <div class="col-md-7">
-            <button type="button" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-play" aria-hidden="true"></span> Instrumental Music</button>
-            <button type="button" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-play" aria-hidden="true"></span> New Age Music</button>
-            <button type="button" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-play" aria-hidden="true"></span> Ambient Music</button>
+
+            <button type="button" class="btn btn-info btn-md"><span class="glyphicon glyphicon-play" aria-hidden="true" id="Instrumental"></span> Instrumental Music</button>
+            <button type="button" class="btn btn-info btn-md"><span class="glyphicon glyphicon-play" aria-hidden="true" id="New_Age"></span> New Age Music</button>
+            <button type="button" class="btn btn-info btn-md"><span class="glyphicon glyphicon-play" aria-hidden="true" id="Ambient"></span> Ambient Music</button>
             <br>
             <br>
             <br>
-            <div class="sometimer" style="font-size: 3em; color: red">TIMER GOES HERE!!!</div>
+            <div class="sometimer" style="font-size: 1em; color: blue">
+            <span style="font-size: 2em" id="min">00</span>: <span style="font-size: 2em" id="sec">00</span>
+            </div>
+
+            <button type="button" class="btn btn-info btn-sm" value="Start" id="start">Start</button>
+            <button type="button" class="btn btn-info btn-sm" value="Stop" id="stop">Stop</button>
+            <button type="button" class="btn btn-info btn-sm" value="Resume" id="resume">Resume</button>
+
 
         </div>
 
         <!--Progress Bar/Circle-->
+
         <div class="col-md-5">
                 <!--<div id="container" style="font-size: 3em; color: red">PROGRESS CIRCLE GOES HERE!!!</div>-->
             <div class="progress-pie-chart"> <!--id="data-percent"-->
@@ -108,8 +129,6 @@
             <br>
 
         </div>
-
-
 
         <!--Table for Progress Entries-->
             <div class="col-lg-12">
@@ -144,6 +163,7 @@
 
 
 
+
     <!-Input Add A Week-->
     <!--<div class="container">-->
         <div class="panel panel-default">
@@ -173,6 +193,8 @@
                         <input type="number" class="form-control" id="weekday7" name="quantity" min="1" max="120">
                     </div>
 
+
+
                     <!-Submit Button-->
                     <button id="addWeek" type="button" class="btn btn-info">Submit</button>
                 </form>
@@ -192,6 +214,10 @@
 <div class="container">
     <div class="footer">
         <p>&copy;&nbsp;Copyright 2017 StaylorRobinJones</p>
+
+        <p>&nbsp;Quotes from <a href="http://forismatic.com/en/#252500df70/" target="_blank">forismatic.com</a></p>
+        <p>&nbsp;Music from the Free Music Archive 
+        <a href="https:/creativecommons.org/licenses/by-nc/3.0/" target="_blank">CC by NC </a></p>
     </div>
 </div>
 

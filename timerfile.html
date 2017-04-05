@@ -1,31 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div>
+    <h1>Countdown</h1>
+    <span id="min">00</span>:
+    <span id="sec">00</span>
+    <br/>
+    <br/>
+    <input type="button" value="Start" id="start" />
+    <input type="button" value="Stop"  id="stop" />
+    <input type="button" value="Resume"  id="resume" />
+    <input type="button" value="Record Time" id="record" />
+    <br/>
+    <br/>
+    Number of Minutes (enter 1 through 60) <input type="number" id="minuteinput" required min="1" max="60" size="50"/>
+    <br/>
+    <br/>
+    
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
 
+<script>
 var medtime;
 var medtime2;
 var timer;
 var resume;
 var stopclick=0;
-var daytrack;
-var datetrack;
-var totaltime;
-var goaltime;
-var tracktime;
-var playing=false;
 
-$( document ).ready(function() {
-$("body").on('click', "#start",settime);
-$("body").on('click', "#stop",stoptime);
-$("body").on('click', "#resume",resumetime);
-
-function playaudio(){
-  if (playing===false) {
-    $(".music").play();
-    playing=true;
-  }
-  else {
-    $(".music").pause();
-    playing=false;
-  }
-}
+$("#start").on('click', settime);
+$("#stop").on('click', stoptime);
+$("#resume").on('click', resumetime);
+$("#record").on('click', savetime);
 
 function settime(){
       $("#min").html("00");
@@ -105,5 +114,14 @@ function resumetime() {
 }
 }
 
-});
+function savetime() {
+   console.log(starttime-medtime);
+   console.log(starttime-medtime);
+  $("#minuteinput").val("");
+}
 
+
+
+</script>
+</body>
+</html>
