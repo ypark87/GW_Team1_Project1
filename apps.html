@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meditation Bliss App</title>
+
+    <!--Bootstrap-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--css to override the style-->
+    <link rel="stylesheet" type="text/css" href="assets/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
+    <!--Link to JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <!--Link to Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+
+    <!--Link to moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <!--Link to timer javascript file-->
+    <script src="assets/javascript/JS_Timer.js"></script>
+
+        <!--Link to Music javascript file-->
+    <script src="assets/javascript/JS_Music.js"></script>
+
+        <!--Link to Quotesjavascript file-->
+    <script src="assets/javascript/JS_Quotes.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <br>
+    <!--Jumbotron Title-->
+    <div class="jumbotron" style="background: linear-gradient(to right, royalblue, #aed4f8)">
+        <h1 class="text-center" style="font-size: 7em; color: deepskyblue"><strong>Bliss</strong></h1>
+        <h3 class="text-center" style="font-size: 3em; color: deepskyblue">Meditation Retreat</h3>
+    </div>
+
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="page-collection">
+                    <a href="main.html">Home</a>
+                </li>
+                <li class="page-collection">
+                    <a href="about.html">About</a>
+                </li>
+                <li class="page-collection">
+                    <a href="meditate.html">Meditate</a>
+                </li>
+                <li class="page-collection">
+                    <a href="apps.html">Apps</a>
+                </li>
+                <li class="page-collection">
+                    <a href="contact.html">Contact</a>
+                </li>
+                <li class="page-collection">
+                    <a href="login.html">Log in</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Page Headline-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <h4 class="page-title" style="font-size: 2em; color: orange">App</h4>
+        </div>
+    </nav>
+    <!--Middle Section-->
+
+    <div class="row">
+        <div class="music"></div>
+        <!--<div class="col-md-4">
+            <div class="rounded">
+                <img src="./assets/images/bliss5.jpg">
+                <div class="caption">
+                    <!<h4>Thumbnail label</h4>-->
+                <!--</div>-->
+            </div>
+        </div>-->
+        <!--Music Choice Buttons-->
+        <div class="col-md-7">
+            <button type="button" class="btn btn-info btn-md"><span class="glyphicon glyphicon-play" aria-hidden="true" id="Instrumental"></span> Instrumental Music</button>
+            <button type="button" class="btn btn-info btn-md"><span class="glyphicon glyphicon-play" aria-hidden="true" id="New_Age"></span> New Age Music</button>
+            <button type="button" class="btn btn-info btn-md"><span class="glyphicon glyphicon-play" aria-hidden="true" id="Ambient"></span> Ambient Music</button>
+            <br>
+            <br>
+            <br>
+            <div class="sometimer" style="font-size: 1em; color: blue">
+            <span style="font-size: 2em" id="min">00</span>: <span style="font-size: 2em" id="sec">00</span>
+            </div>
+
+            <button type="button" class="btn btn-info btn-sm" value="Start" id="start">Start</button>
+            <button type="button" class="btn btn-info btn-sm" value="Stop" id="stop">Stop</button>
+            <button type="button" class="btn btn-info btn-sm" value="Resume" id="resume">Resume</button>
+
+        </div>
+
+        <!--Progress Bar/Circle-->
+        <div class="col-md-5">
+                <div id="container" style="font-size: 3em; color: red">PROGRESS CIRCLE GOES HERE!!!</div>
+        <br>
+        <div id="quote-title"> </div>
+        <div id="quote-content"> </div>
+        </div>
+
+
+        <!--Table for Progress Entries-->
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: whitesmoke">My Weekly Meditation</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>WEEK/MY GOAL (min.)</th>
+                                        <th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+                                        <th>Friday</th>
+                                        <th>Saturday</th>
+                                        <th>Sunday</th>
+                                        <th>Weekly Total (min.)</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="weekList">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    <!--Input Add A Week-->
+    <!--<div class="container">-->
+        <div class="panel panel-default">
+            <div class="panel-heading" style="background-color: whitesmoke">
+                <h2 class="panel-title">Set Your Weekly Goal (min.)</h2>
+            </div>
+
+            <!--Form Input-->
+            <div class="panel-body">
+                <form>
+                    <div class="form-group form-inline">
+                        <label for="weeklyGoal">Set Weekly Goal</label>
+                        <input type="number" class="form-control" id="weeklyGoal" name="quantity" min="1" max="900">
+                        <label for="weekday1">Mon.</label>
+                        <input type="number" class="form-control" id="weekday1" name="quantity" min="1" max="120">
+                        <label for="weekday2">Tue.</label>
+                        <input type="number" class="form-control" id="weekday2" name="quantity" min="1" max="120">
+                        <label for="weekday3">Wed.</label>
+                        <input type="number" class="form-control" id="weekday3" name="quantity" min="1" max="120">
+                        <label for="weekday4">Thurs.</label>
+                        <input type="number" class="form-control" id="weekday4" name="quantity" min="1" max="120">
+                        <label for="weekday5">Fri.</label>
+                        <input type="number" class="form-control" id="weekday5" name="quantity" min="1" max="120">
+                        <label for="weekday6">Sat.</label>
+                        <input type="number" class="form-control" id="weekday6" name="quantity" min="1" max="120">
+                        <label for="weekday7">Sun.</label>
+                        <input type="number" class="form-control" id="weekday7" name="quantity" min="1" max="120">
+                    </div>
+
+                    <!--Submit Button-->
+                    <button id="addWeek" type="button" class="btn btn-info">Submit</button>
+                </form>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="footer">
+        <p>&copy;&nbsp;Copyright 2017 StaylorRobinJones</p>
+        <p>&nbsp;Quotes from <a href="http://forismatic.com/en/#252500df70/" target="_blank">forismatic.com</a></p>
+        <p>&nbsp;Music from the Free Music Archive 
+        <a href="https:/creativecommons.org/licenses/by-nc/3.0/" target="_blank">CC by NC </a></p>
+    </div>
+</div>
+
+
+
+<!--Javascript-->
+<script src="assets/javascript/app.js"></script>
+<!-- Created a background with scrolling images -->
+<!-- link to js file that supports the backstretch piece -->
+<script type="text/javascript" src="assets/javascript/backstretch.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.backstretch('assets/images/bliss2.jpg');
+    });
+</script>
+
+
+</body>
+</html>
+
