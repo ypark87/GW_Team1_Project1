@@ -88,11 +88,23 @@ $("#addWeek").on("click", function() {
 //Upload Data to Database
    // database.ref().push(newWeek);
 
-//Clear off the text-boxes
-    //$("#weekList").append("<tr><td>" + newWeek2.goal+ "</td><td>" + newWeek2.totalMin +"</td></tr>");
 
     $("#weekList").append("<tr><td >" + newWeek2.goal+ "</td><td>" + newWeek2.monday +"</td><td>" + newWeek2.tuesday +"</td><td>" + newWeek2.wednesday +"</td><td>" +
          + newWeek2.thursday + "</td><td>" + newWeek2.friday + "</td><td>" + newWeek2.saturday + "</td><td>" + newWeek2.sunday + "</td><td>" + sum + "</td></tr>");
+
+
+    var percent = calculatePercent(sum,  newWeek2.goal);
+
+        var $ppc = $('.progress-pie-chart'),
+            percent = parseInt(/*$ppc.data('percent')*/percent),
+            deg = 360*percent/100;
+        if (percent > 50) {
+            $ppc.addClass('gt-50');
+        }
+        $('.ppc-progress-fill').css('transform','rotate('+ deg +'deg)');
+        $('.ppc-percents span').html(percent + '%');
+        /*$('#data-percent').append(percent + '%');*/
+
 
     $("#weeklyGoal").val("");
     $("#weekday1").val("");
@@ -107,45 +119,25 @@ $("#addWeek").on("click", function() {
     return false;
 
 });
-// Circle Bar Tracker
-var bar = new ProgressBar.Circle(container, {
-    color: '#aaa',
-    // This has to be the same size as the maximum width to
-    // prevent clipping
-    strokeWidth: 4,
-    trailWidth: 1,
-    easing: 'easeInOut',
-    duration: 1400,
-    text: {
-        autoStyleContainer: false
-    },
-    from: { color: '#aaa', width: 1 },
-    to: { color: '#333', width: 4 },
-    // Set default step function for all animate calls
-    step: function(state, circle) {
-        circle.path.setAttribute('stroke', state.color);
-        circle.path.setAttribute('stroke-width', state.width);
 
-        var value = Math.round(circle.value() * 100);
-        if (value === 0) {
-            circle.setText('');
-        } else {
-            circle.setText(value);
-        }
 
-    }
-});
-bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-bar.text.style.fontSize = '2rem';
 
-bar.animate(1.0);
 
-//link to the progress bar/progress circle
-function progressBar(value) {
-    var weeklyGoal = 0;
-    var weeklyTotal = 0;
-     result(weeklyTotal/weeklyGoal*100);
+//link to the progress bar/progress pie chart
+function calculatePercent(weeklyGoal, weeklyTotal) {
+    //var weeklyGoal = 0;
+    //var weeklyTotal = 0;
+    var result = weeklyGoal/weeklyTotal*100;
+    console.log(result);
+    return result;
+
 }
+
+/* Progress Pie Chart */
+
+
+
+
 /*database.ref().on("child_added", function(snapshot, prevChildKey) {*/
 /* var newWeek = snapshot.val();*/
 /* console.log("Previous Post ID: " + prevChildKey);*/
