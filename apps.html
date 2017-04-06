@@ -24,17 +24,26 @@
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
     <!--Link to timer javascript file-->
-    <script src="assets/javascript/JS_Timer.js"></script>
+    <script type="text/javascript" src="assets/javascript/JS_Timer.js"></script>
 
         <!--Link to Music javascript file-->
-    <script src="assets/javascript/JS_Music.js"></script>
+    <script type="text/javascript" src="assets/javascript/JS_Music.js"></script>
 
         <!--Link to Quotesjavascript file-->
-    <script src="assets/javascript/JS_Quotes.js"></script>
+    <script type="text/javascript" src="assets/javascript/JS_Quotes.js"></script>
 
 </head>
 
 <body>
+    <!--Link to timer javascript file-->
+   
+    <script type="text/javascript" src="assets/javascript/JS_Timer.js"></script>
+
+        <!--Link to Music javascript file-->
+    <script type="text/javascript" src="assets/javascript/JS_Music.js"></script>
+
+        <!--Link to Quotesjavascript file-->
+    <script type="text/javascript" src="assets/javascript/JS_Quotes.js"></script>
 
 <div class="container">
     <br>
@@ -49,7 +58,7 @@
         <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <li class="page-collection">
-                    <a href="main.html">Home</a>
+                    <a href="index.html">Home</a>
                 </li>
                 <li class="page-collection">
                     <a href="about.html">About</a>
@@ -86,7 +95,7 @@
             <div class="rounded">
                 <img src="./assets/images/bliss5.jpg">
                 <div class="caption">
-                    <!--<h4>Thumbnail label</h4>-->
+                    <!<h4>Thumbnail label</h4>-->
                 <!--</div>
 
             </div>
@@ -97,17 +106,21 @@
             <button type="button" class="btn btn-info btn-md"><span class="glyphicon glyphicon-play" aria-hidden="true" id="Instrumental"></span> Instrumental Music</button>
             <button type="button" class="btn btn-info btn-md"><span class="glyphicon glyphicon-play" aria-hidden="true" id="New_Age"></span> New Age Music</button>
             <button type="button" class="btn btn-info btn-md"><span class="glyphicon glyphicon-play" aria-hidden="true" id="Ambient"></span> Ambient Music</button>
-            <br>
-            <br>
-            <br>
+            <br><br> <br>
+            <div id="music"></div>
+             <br><br> <br>
             <div class="sometimer" style="font-size: 1em; color: blue">
             <span style="font-size: 2em" id="min">00</span>: <span style="font-size: 2em" id="sec">00</span>
+            Number of Minutes (enter 1 through 60) <input type="number" id="minuteinput" required min="1" max="60" size="50"/> 
             </div>
 
+            <div>
             <button type="button" class="btn btn-info btn-sm" value="Start" id="start">Start</button>
             <button type="button" class="btn btn-info btn-sm" value="Stop" id="stop">Stop</button>
             <button type="button" class="btn btn-info btn-sm" value="Resume" id="resume">Resume</button>
-
+            </div>
+             <div id="#quote-content"></div>
+            <div id="#quote-title"></div>
 
         </div>
 
@@ -164,7 +177,7 @@
 
 
 
-    <!-Input Add A Week-->
+    <!--Input Add A Week-->
     <!--<div class="container">-->
         <div class="panel panel-default">
             <div class="panel-heading" style="background-color: whitesmoke">
@@ -195,7 +208,7 @@
 
 
 
-                    <!-Submit Button-->
+                    <!--Submit Button-->
                     <button id="addWeek" type="button" class="btn btn-info">Submit</button>
                 </form>
             </div>
@@ -213,9 +226,8 @@
 
 <div class="container">
     <div class="footer">
-        <p>&copy;&nbsp;Copyright 2017 StaylorRobinJones</p>
-
-        <p>&nbsp;Quotes from <a href="http://forismatic.com/en/#252500df70/" target="_blank">forismatic.com</a></p>
+        <p>&copy;&nbsp;Copyright 2017 StaylorRobinJones<br>
+        &nbsp;Quotes from <a href="http://forismatic.com/en/#252500df70/" target="_blank">forismatic.com</a><br>
         <p>&nbsp;Music from the Free Music Archive 
         <a href="https:/creativecommons.org/licenses/by-nc/3.0/" target="_blank">CC by NC </a></p>
     </div>
